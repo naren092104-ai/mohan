@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Material Research Center (MRC) | Advanced Energy & Nanomaterials Lab</title>
+  <meta name="description" content="Material Research Center (MRC) in Coimbatore, founded by Dr. S. Selvasekarapandian, specializes in Solid-State Electrolytes, Battery Technologies, Polymers, Supercapacitors, and Fuel Cells with cutting-edge EIS testing.">
+  <meta name="keywords" content="Material Research Center, MRC Coimbatore, Dr S Selvasekarapandian, Battery Research, Solid State Electrolyte, EIS Testing, Polymers, Nanomaterials Ramanathapuram">
+  <meta name="author" content="Dr. S. Selvasekarapandian - Material Research Center (MRC)">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      scroll-behavior: smooth;
+    }
+    
+    :root {
+      --primary: #0b1f3a;
+      --secondary: #0284c7;
+      --accent: #0ea5e9;
+      --light-bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+    }
+
+    body {
+      background-color: var(--light-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    header {
+      background: rgba(255, 255, 255, 0.98);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 2rem;
+    }
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .brand-logo {
+      height: 45px;
+      width: auto;
+      border-radius: 6px;
+      object-fit: contain;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 22px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover { color: var(--secondary); }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #07162c 0%, #0c4a6e 100%);
+      color: white;
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.5px;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 820px;
+      margin: 0 auto 2.2rem;
+      color: #e2e8f0;
+    }
+    .btn {
+      background: var(--secondary);
+      color: white;
+      padding: 0.85rem 2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+      transition: all 0.3s ease;
+    }
+    .btn:hover { 
+      background: #0369a1; 
+      transform: translateY(-2px);
+    }
+
+    /* Standard Section */
+    section {
+      padding: 4.5rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2.1rem;
+      color: var(--primary);
+      margin-bottom: 2.8rem;
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      width: 50px;
+      height: 4px;
+      background: var(--secondary);
+      display: block;
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+
+    /* Mission & Vision Grid */
+    .mv-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .mv-card {
+      background: var(--card-bg);
+      padding: 2.2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      border-top: 4px solid var(--secondary);
+    }
+    .mv-card h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Founder Section */
+    .founder-card {
+      background: var(--card-bg);
+      max-width: 950px;
+      margin: auto;
+      padding: 3rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      border-left: 6px solid var(--secondary);
+    }
+    .founder-img-wrapper {
+      flex: 1;
+      min-width: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1bb7ef, #0c9ad9);
+      padding: 16px;
+      box-shadow: inset 0 0 0 3px rgba(255,255,255,0.2);
+    }
+    .founder-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid rgba(255,255,255,0.95);
+      box-shadow: 0 8px 20px rgba(2, 132, 199, 0.25);
+      object-position: center top;
+      background: #dfeff8;
+    }
+    .founder-details {
+      flex: 2;
+      min-width: 280px;
+    }
+    .founder-tag {
+      color: var(--secondary);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 1.5px;
+    }
+    .founder-details h3 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin: 0.3rem 0;
+    }
+    .founder-details h4 {
+      color: var(--secondary);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .founder-details p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .founder-socials {
+      display: flex;
+      gap: 18px;
+      font-size: 1.3rem;
+    }
+    .founder-socials a {
+      color: var(--secondary);
+      transition: transform 0.2s, color 0.2s;
+    }
+    .founder-socials a:hover {
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* Cards Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      border: 1px solid #f1f5f9;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+    .card i {
+      font-size: 2.2rem;
+      color: var(--secondary);
+      margin-bottom: 1.2rem;
+    }
+    .card h3 {
+      margin-bottom: 0.8rem;
+      color: var(--primary);
+      font-size: 1.25rem;
+    }
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Publications */
+    .pub-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .pub-item {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-left: 5px solid var(--secondary);
+      border-radius: 6px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+    .pub-item h4 {
+      color: var(--primary);
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+    }
+    .pub-item span {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Contact Section */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      background: var(--card-bg);
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.06);
+    }
+    .contact-info h3 {
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 1.2rem;
+      color: var(--text-dark);
+    }
+    .contact-detail i {
+      color: var(--secondary);
+      font-size: 1.2rem;
+      margin-top: 4px;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 0.85rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: #94a3b8;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin-top: 4rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 820px) {
+      .navbar { flex-direction: column; gap: 1rem; }
+      .founder-card { flex-direction: column; text-align: center; padding: 2rem; }
+      .founder-socials { justify-content: center; }
+      .contact-container { grid-template-columns: 1fr; padding: 2rem; }
+      .hero h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header>
+    <div class="navbar">
+      <a href="#" class="brand">
+        <!-- Logo Image -->
+        <img src="logo.jpg" alt="MRC Logo" class="brand-logo" onerror="this.style.display='none'">
+        <span>Material Research Center (MRC)</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#founder">Founder</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#facilities">Facilities</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero" style="max-width: 100%;">
+    <h1>Material Research Center (MRC)</h1>
+    <p>Advancing frontiers in Solid-State Electrolytes, Battery Storage Systems, Nanostructured Composites, and Clean Electrochemical Energy.</p>
+    <a href="#facilities" class="btn">Explore Lab Facilities</a>
+  </section>
+
+  <!-- About, Mission & Vision -->
+  <section id="about">
+    <h2 class="section-title">About the Center</h2>
+    <p style="text-align: center; max-width: 900px; margin: 0 auto 3rem; font-size: 1.15rem; color: var(--text-muted); line-height: 1.8;">
+      The <strong>Material Research Center (MRC)</strong> is an advanced research and characterization facility dedicated to high-impact scientific investigations in functional materials. Located in Ramanathapuram, Coimbatore, our center bridges fundamental physical chemistry and engineering applications to develop next-generation clean energy storage solutions, robust solid polymer systems, and scalable nanotechnologies.
+    </p>
+
+    <div class="mv-grid">
+      <div class="mv-card">
+        <h3><i class="fa-solid fa-bullseye" style="color: var(--secondary);"></i> Our Mission</h3>
+        <p style="color: var(--text-muted);">
+          To discover, synthesize, and engineer high-performance functional materials that solve critical energy and sustainability challenges through rigorous academic research, state-of-the-art electrochemical diagnostics, and collaborative innovation.
+        </p>
+      </div>
+
+      <div class="mv-card">
+        <h3><i class="fa-solid fa-eye" style="color: var(--secondary);"></i> Our Vision</h3>
+        <p style="color: var(--text-muted);">
+          To establish a globally recognized center of excellence in materials science and battery technology, spearheading the transition toward safe, all-solid-state, non-flammable energy storage systems for a cleaner future.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder & Director Section -->
+  <section id="founder" style="background-color: #f1f5f9; max-width: 100%; padding: 4.5rem 2rem;">
+    <div style="max-width: 1200px; margin: auto;">
+      <h2 class="section-title">Founder & Leadership</h2>
+      <div class="founder-card">
+        
+        <!-- Founder Photo -->
+        <div class="founder-img-wrapper">
+          <img src="./WhatsApp Image 2026-10-05 at 7.45.17 PM.jpeg" alt="Dr. S. Selvasekarapandian" class="founder-img">
+        </div>
+
+        <!-- Founder Details -->
+        <div class="founder-details">
+          <span class="founder-tag">Leadership & Vision</span>
+          <h3>Dr. S. Selvasekarapandian</h3>
+          <h4>Founder & Director, Material Research Center (MRC)</h4>
+          
+          <p>
+            Leading cutting-edge investigations in solid-state electrolytes, functional nanomaterials, and high-energy-density battery prototypes. Dedicated to mentoring researchers, establishing high-precision electrochemical characterization standards, and advancing material science innovations.
+          </p>
+
+          <!-- Social / Academic Links -->
+          <div class="founder-socials">
+            <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" title="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
+            <a href="#" title="ResearchGate"><i class="fa-brands fa-researchgate"></i></a>
+            <a href="mailto:wackadoodle.vanu@gmail.com" title="Direct Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Areas -->
+  <section id="research">
+    <h2 class="section-title">Core Research Areas</h2>
+    <div class="grid">
+      <div class="card">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h3>Solid-State Electrolytes</h3>
+        <p>Designing composite, ceramic, and polymer solid electrolytes offering high ionic conductivity, zero leakage, and dendrite-resistant lithium/sodium interfaces.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-car-battery"></i>
+        <h3>Battery Technologies</h3>
+        <p>Developing robust pouch cells, coin cells, and next-generation electrode configurations with high cyclic capacity retention.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-layer-group"></i>
+        <h3>Polymers & Composites</h3>
+        <p>Engineering specialized functional polymeric networks, ionic conductive blends, and reinforced dielectric thin films.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-circle-nodes"></i>
+        <h3>Nanomaterials</h3>
+        <p>Controlled synthesis of 0D, 1D, and 2D nanomaterials for high-surface-area catalytic and electrochemical devices.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-bolt"></i>
+        <h3>Supercapacitors</h3>
+        <p>Fabricating high-power asymmetric and hybrid pseudocapacitor architectures for rapid pulsed charge storage.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-fire-flame-curved"></i>
+        <h3>Fuel Cells</h3>
+        <p>Electrocatalyst optimization, ion exchange membrane testing, and electrode assembly for clean hydrogen conversions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facilities / Key Equipment -->
+  <section id="facilities">
+    <h2 class="section-title">Key Lab Equipment & Facilities</h2>
+    <div class="grid">
+      <div class="card">
+        <i class="fa-solid fa-chart-line"></i>
+        <h3>Electrochemical Impedance Spectroscopy (EIS)</h3>
+        <p>Precision potentiostat/galvanostat impedance analyzers for interface resistance, bulk electrolyte conductivity, and charge transfer kinetics.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-temperature-arrow-up"></i>
+        <h3>Laboratory Ovens & Air Oven</h3>
+        <p>Controlled thermal annealing, sample conditioning, and moisture-controlled curing ovens for uniform sample preparation.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-rotate"></i>
+        <h3>Magnetic & Overhead Stirrers</h3>
+        <p>Precise temperature-controlled magnetic hotplates and multi-speed overhead agitators for homogenous precursor mixing.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-desktop"></i>
+        <h3>Data Monitors & Workstations</h3>
+        <p>Dedicated high-resolution logging terminals and acquisition systems for continuous electrochemical and sensor telemetry.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section id="publications">
+    <h2 class="section-title">Research Publications</h2>
+    <div class="pub-container">
+      <div class="pub-item">
+        <h4>"Polymer-Ceramic Composite Solid-State Electrolytes with Enhanced Interfacial Stability for High-Voltage Lithium Batteries"</h4>
+        <span>Journal of Materials Chemistry A &bull; Published</span>
+      </div>
+      <div class="pub-item">
+        <h4>"Nanostructured Metal-Organic Frameworks and Carbon Composites for High-Energy Density Supercapacitors"</h4>
+        <span>ACS Applied Energy Materials &bull; Published</span>
+      </div>
+      <div class="pub-item">
+        <h4>"Electrochemical Impedance Spectroscopy (EIS) Diagnostics on Ion Transport Phenomena in Solid Polymer Matrices"</h4>
+        <span>Electrochimica Acta &bull; Published</span>
+      </div>
+      <div class="pub-item">
+        <h4>"Development of Non-Fluorinated Proton Conducting Membranes for Direct Energy Fuel Cell Assemblies"</h4>
+        <span>International Journal of Hydrogen Energy &bull; Published</span>
+      </div>
+    </div>
+    <p style="text-align: center; margin-top: 1.5rem; color: var(--text-muted); font-style: italic;">
+      * Our faculty and scholars continually contribute to peer-reviewed international scientific journals.
+    </p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2 class="section-title">Contact & Location</h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Connect with MRC</h3>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+          For sample testing slots (EIS, Thermal Analysis), academic joint-ventures, or industrial collaboration queries:
+        </p>
+
+        <div class="contact-detail">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <strong>Laboratory Address:</strong><br>
+            200A, Thiruvallurar Nagar,<br>
+            Ramanathapuram,<br>
+            Coimbatore - 641045, Tamil Nadu, India.
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <strong>Email Us:</strong><br>
+            <a href="mailto:wackadoodle.vanu@gmail.com" style="color: var(--secondary); text-decoration: none;">wackadoodle.vanu@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <strong>Phone / Direct Lab Contact:</strong><br>
+            <a href="tel:+919786854955" style="color: inherit; text-decoration: none;">+91 9786854955</a>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Your inquiry has been submitted to the MRC Team.');">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email Address" required>
+        <input type="text" placeholder="Subject / Testing Requirement (e.g. EIS Characterization)">
+        <textarea rows="4" placeholder="Your Message or Project Summary..." required></textarea>
+        <button type="submit" class="btn" style="width: 100%;">Send Inquiry</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Material Research Center (MRC). All Rights Reserved.</p>
+    <p style="font-size: 0.8rem; margin-top: 5px;">Coimbatore, Tamil Nadu, India</p>
+  </footer>
+
+</body>
+</html>
